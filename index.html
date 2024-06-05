@@ -39,6 +39,7 @@
         .content {
             max-width: 800px; /* Maximum width of the content for better readability */
             margin: auto; /* Centers the content horizontally */
+            padding: 60px;
         }
         #tooltip {
             position: absolute;
@@ -74,7 +75,39 @@
 
         <script src="https://d3js.org/d3.v7.min.js"></script>
         <div id="radarChart"></div>
+        <br>
+        <p>
+            The most important attributes for a physically difficult sport were determined to be speed, durability, agility, and power. As can be
+            seen from the chart, Ice Hockey has the strongest values all-around in these most important attributes, so we decide to examine the
+            best hockey players of all time based on their stats.
+        </p>
+        <br>
+        <div id="dataviz_axisZoom"></div>
+        <div class="dropdown">
+            <label for="x-axis">X-axis:</label>
+            <select id="x-axis">
+                <option value="goals" selected>Goals</option>
+                <option value="assists">Assists</option>
+                <option value="points">Points</option>
+                <option value="plus_minus">Plus/Minus</option>
+                <option value="point_shares">Point Shares</option>
+            </select>
+            <label for="y-axis">Y-axis:</label>
+            <select id="y-axis">
+                <option value="goals">Goals</option>
+                <option value="assists" selected>Assists</option>
+                <option value="points">Points</option>
+                <option value="plus_minus">Plus/Minus</option>
+                <option value="point_shares">Point Shares</option>
+            </select>
+        </div>
+        <br>
+        <p>
+            No mattter which combination of axes are chosen in the above scatter plot, Wayne Gretzky is always either the best or one of the best 
+            hockey players in the NHL. This leads us to conclude that Wayne Gretzky is the GOAT athlete from our dataset.
+        </p>
         <script src="radarChart.js"></script>
+        <script src="scatterPlot.js"></script>
     </div>
 </body>
 </html>
