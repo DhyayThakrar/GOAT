@@ -4,7 +4,7 @@ function RadarChart(id, data, options) {
     var cfg = {
         w: 600,
         h: 600,
-        margin: {top: 100, right: 150, bottom: 100, left: 150},
+        margin: {top: 100, right: 600, bottom: 100, left: 150},
         levels: 5,
         maxValue: 0,
         labelFactor: 1.25,
@@ -126,6 +126,37 @@ function RadarChart(id, data, options) {
         .style("stroke", function(d, i) { return cfg.color(i); })
         .style("fill", "none")
         .style("filter", "url(#glow)");
+
+        // Create a legend wrapper
+// Create a legend wrapper positioned more explicitly
+var legend = svg.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(" + (cfg.w - 150) + "," + 200 + ")");
+
+// Add legend squares
+legend.selectAll(".legend-rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", function(d, i) { return i * 20; })
+    .attr("width", 10)
+    .attr("height", 10)
+    .style("fill", function(d, i) { return cfg.color(i); });
+
+// Add legend text
+legend.selectAll(".legend-text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", 20)
+    .attr("y", function(d, i) { return i * 20 + 9; })
+    .text(function(d) { return d.name; })
+    .attr("font-size", "11px")
+    .attr("fill", "#737373");
+
+
+
 }
 
 d3.csv("toughestsport.csv").then(function(data) {
