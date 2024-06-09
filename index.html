@@ -41,6 +41,23 @@
             margin: auto; /* Centers the content horizontally */
             padding: 60px;
         }
+        .custom-link {
+            color: blue;
+            text-decoration: underline;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 80px;
+            height: 28px;
+            padding: 2px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 100;
+        }
         #tooltip {
             position: absolute;
             opacity: 0;
@@ -48,7 +65,7 @@
             padding: 10px;
             background: rgba(0,0,0,0.6);
             color: white;
-            z-index: 100; /* Makes sure the tooltip appears above all other content */
+            z-index: 100;
         }
 
     </style>
@@ -57,6 +74,10 @@
     <div class="content">
         <h1>Determining the Greatest of All Time in All of Sports</h1>
         <h2>By Dhyay Thakrar and Jeffery Meredith</h2>
+        <p>
+            <a href="https://youtu.be/EZWH3Ns7T8o?si=MmKcWu2lSYOdXu_N" target="_blank" class="custom-link">Demo Video</a>
+        </p>
+        <br>
         <p>
             Everyone has wondered who the greatest of all time is in all of sports. 
             For each sport, people have their own GOAT like LeBron James or Michael Jordan for basketball, Lionel Messi or Cristiano Ronaldo
